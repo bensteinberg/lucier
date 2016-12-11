@@ -4,11 +4,12 @@ import soundfile as sf
 from thready import Playback
 from datetime import datetime
 
+
 def sitting(input_file, output_base, cycles, playback_device, recording_device, fs = 44100):
     """I am sitting in a room"""
     timestamp = datetime.now().strftime("%Y%m%d%H%M")
     for i in range (0, cycles):
-        output_file = "%s_%s_%d.wav" % (output_base, timestamp, i)
+        output_file = "{0}_{1}_{2:02d}.wav".format(output_base, timestamp, i)
         # try-retry from http://stackoverflow.com/a/2083996
         while True:
             try:
@@ -20,4 +21,3 @@ def sitting(input_file, output_base, cycles, playback_device, recording_device, 
             except PortAudioError:
                 continue
             break
-
