@@ -13,6 +13,5 @@ class Playback(Thread):
         self.samps = len(self.inp)
         
     def run(self):                       
-        sd.play(self.inp, self.fs, device = self.device)
+        sd.play(self.inp, self.fs, device=self.device)
         sd.wait()        
-
