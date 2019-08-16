@@ -25,6 +25,6 @@ def record(filepath, device, samps, fs, mix=1.0, side_gain=1.0):
         # seems like counting clipped samples should be simpler
         clip = len(filter(lambda x: any([y >= 1.0 for y in abs(x)]), output))
         msg = "Clipping in {count} sample{s}: consider reducing the mix argument."
-        print(msg.format(count=clip, s='' if clip == 1 else 's'))
+        print(msg.format(count=clip, s="" if clip == 1 else "s"))
 
     sf.write(filepath, output, fs)

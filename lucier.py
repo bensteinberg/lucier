@@ -4,7 +4,9 @@ from thready import Playback
 from datetime import datetime
 
 
-def sitting(input_file, output_base, cycles, playback_device, recording_device, fs=44100):
+def sitting(
+    input_file, output_base, cycles, playback_device, recording_device, fs=44100
+):
     """I am sitting in a room"""
     timestamp = datetime.now().strftime("%Y%m%d%H%M")
     for i in range(0, cycles):
